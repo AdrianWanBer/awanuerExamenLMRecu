@@ -66,9 +66,10 @@ function adivinarPalabra() {
 			alert("Has perdido");
 		}
 	}
-	//
+	//FECHAS Y IMPRIMIR TABLA
 	var tiempoUltimo = new Date();
-	tiempoFinal =  tiempoUltimo.getSeconds() - TiempoInicio.getSecods();
+	var tiempoFinal =  tiempoUltimo.getTime() - TiempoInicio.getTime();
+	tiempoFinal / 1000;
 
 	var tabla = document.getElementById("tabla");
 	tabla.innerHTML += "<tr><td>" + palabra + " </td><td>" + intentos + "</td><td>" + tiempoFinal + "</td></tr>";
