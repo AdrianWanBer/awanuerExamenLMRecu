@@ -1,0 +1,7 @@
+@charset "UTF-8";
+*{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.tablas{
+	border: 2px solid black;
+}

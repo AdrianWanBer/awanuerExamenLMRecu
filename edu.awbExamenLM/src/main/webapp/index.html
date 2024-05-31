@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Examen recuperacion</title>
+	<link rel="stylesheet" href="diseños.css">
+</head>
+
+<body>
+	<button onclick="crearPalabra()">Crear palabra</button>
+
+	<p>Intentos:
+	<p id="intentosId">
+	</p>
+	</p>
+	<button onclick="adivinarLetra()">Letra</button>
+	<button onclick="adivinarPalabra()">Adivinar</button>
+	<p id="numeroLetras"></p>
+	<p>Usadas:
+	<p id="descartadas"></p>
+	</p>
+	<br>
+	<br>
+	<br>
+	<h2>Historial</h2>
+
+	<table id="tabla" class="tablas">
+		<tr>
+			<th>Palabra</th>
+			<th>Intentos</th>
+			<th>Tiempo</th>
+		</tr>
+
+	</table>
+
+	<script src="javascript.js"></script>
+</body>
+
+</html>
