@@ -5,24 +5,28 @@ var palabra;
 var letrasIndividuales = [];
 var numeroLetras = document.getElementById("numeroLetras");
 var palabraAsteriscos = [];
+var TiempoInicio;
+var descartadas = document.getElementById("descartadas");
 
-var TiempoInicio = new Date();
 
 function crearPalabra() {
+	TiempoInicio = new Date();
 	palabra = prompt("Propon la palabra para adivinar");
 	numeroLetras.innerText = "Palabra: ";
 	for (let i = 0; i < palabra.length; i++) {
 		palabraAsteriscos[i] = "*";
 		numeroLetras.innerText += palabraAsteriscos[i];
 	}
-
+	intentos = 0;
+	inten.innerText = intentos;
+	descartadas.innerText = " ";
 }
 
 function adivinarLetra() {
 	if (intentos < 6) {
 
 
-		var descartadas = document.getElementById("descartadas");
+		
 		letrasIndividuales = palabra.split("");
 
 		let letraDada = prompt("¿Que letra elijes?");
@@ -69,7 +73,7 @@ function adivinarPalabra() {
 	//FECHAS Y IMPRIMIR TABLA
 	var tiempoUltimo = new Date();
 	var tiempoFinal =  tiempoUltimo.getTime() - TiempoInicio.getTime();
-	tiempoFinal / 1000;
+	tiempoFinal  = tiempoFinal / 1000;
 
 	var tabla = document.getElementById("tabla");
 	tabla.innerHTML += "<tr><td>" + palabra + " </td><td>" + intentos + "</td><td>" + tiempoFinal + "</td></tr>";
