@@ -1,13 +1,12 @@
 
 //VARIABLES
-var intentos = 1;
+var intentos = 0;
 var palabra;
 var letrasIndividuales = [];
 var numeroLetras = document.getElementById("numeroLetras");
 var palabraAsteriscos = [];
 
-var segundosInicio = new Date().mi;
-
+var TiempoInicio = new Date();
 
 function crearPalabra() {
 	palabra = prompt("Propon la palabra para adivinar");
@@ -57,18 +56,19 @@ function adivinarPalabra() {
 
 		numeroLetras.innerText = "Palabra Final: " + palabra;
 
-		if (intentos = 1 || intentos == 0) {
+		if (intentos <= 1) {
 			alert("Magnifico");
-		} else if (intentos < 3 && intentos > 1) {
+		} else if (intentos <= 3 && intentos > 1) {
 			alert("Bien");
-		} else if (intentos < 5 && intentos > 3) {
+		} else if (intentos <= 5 && intentos > 3) {
 			alert("Por poco");
 		} else if (intentos > 5) {
 			alert("Has perdido");
 		}
 	}
-
-	var tiempoFinal = new Date().getSeconds - segundosInicio;
+	//
+	var tiempoUltimo = new Date();
+	tiempoFinal =  tiempoUltimo.getSeconds() - TiempoInicio.getSecods();
 
 	var tabla = document.getElementById("tabla");
 	tabla.innerHTML += "<tr><td>" + palabra + " </td><td>" + intentos + "</td><td>" + tiempoFinal + "</td></tr>";
